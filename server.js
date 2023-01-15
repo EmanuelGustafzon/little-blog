@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+
 const mongoose = require('mongoose');
 require('dotenv').config()
 const URL = process.env.mongoDBURL
@@ -10,6 +11,13 @@ const Product = require('./models/Product')
 
 mongoose.set('strictQuery', true);
 mongoose.connect(URL)
+
+app.use(express.json())
+
+const productsRouter = require('./routes/products')
+app.use('/products', productsRouter)
+
+app.listen(port, () => console.log('server started'))
 
 run()
 async function run() {
