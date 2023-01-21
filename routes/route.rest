@@ -1,1 +1,6 @@
-GET  http://localhost:3000/products
+POST https://3000-emanuelgust-interviewwe-rbl0cy01jsz.ws-eu83.gitpod.io/sortedlists/weknowit
+Content-Type: application/json
+
+{
+    "list": [-10, -20, 4, 6, 7, 7, 9, 9]
+}
